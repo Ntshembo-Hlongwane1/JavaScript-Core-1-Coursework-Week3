@@ -37,39 +37,37 @@ const replace = (str) => {
 
 // let result = replace(story);
 let result = story
-  .replace("dogs", "cats")
-  .replace("10 dogs", "100000 cats")
-  .replace("great day", "brilliant night")
-  .replace("day", "night");
-
-console.log(result);
+  .replace(/dogs/g, "cats")
+  .replace(/day/g, "night")
+  .replace(10, 100000)
+  .replace("great", "brilliant");
 
 /* EXPECTED OUTPUT */
 
-// const util = require("util");
+const util = require("util");
 
-// function test(test_name, actual, expected) {
-//   console.log("");
-//   let status;
-//   if (actual === expected) {
-//     status = "PASSED";
-//   } else {
-//     status = `FAILED: \nexpected: ${util.inspect(
-//       expected
-//     )} \nbut your function returned: ${util.inspect(actual)}`;
-//   }
+function test(test_name, actual, expected) {
+  console.log("");
+  let status;
+  if (actual === expected) {
+    status = "PASSED";
+  } else {
+    status = `FAILED: \nexpected: ${util.inspect(
+      expected
+    )} \nbut your function returned: ${util.inspect(actual)}`;
+  }
 
-//   console.log(`${test_name}: ${status}`);
-// }
+  console.log(`${test_name}: ${status}`);
+}
 
-// test(
-//   "1. Original story has not been changed",
-//   story,
-//   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day."
-// );
+test(
+  "1. Original story has not been changed",
+  story,
+  "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day."
+);
 
-// test(
-//   "2. The result of the replace is correct",
-//   story,
-//   "I like cats. One night I went to the park and I saw 100000 cats. It was a brilliant night."
-// );
+test(
+  "2. The result of the replace is correct",
+  story,
+  "I like cats. One night I went to the park and I saw 100000 cats. It was a brilliant night."
+);
