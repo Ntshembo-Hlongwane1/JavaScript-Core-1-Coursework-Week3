@@ -6,7 +6,19 @@
   HINT: string and array methods that could be helpful (indexOf, filter)
 */
 
-function getLanes() {}
+function getLanes(arr) {
+  const result = [];
+
+  for (string of arr) {
+    let stringArr = string.split(" ");
+    let laneIndex = stringArr.indexOf("Lane");
+
+    if (laneIndex !== -1) {
+      result.push(string);
+    }
+  }
+  return result;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

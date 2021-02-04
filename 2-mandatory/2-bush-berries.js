@@ -21,7 +21,11 @@
   Let's first look at an example that will teach you how to use these methods.
 */
 
-function bushChecker() {}
+function bushChecker(arr) {
+  return arr.every((item) => item === "pink")
+    ? "Bush is safe to eat from"
+    : "Toxic! Leave bush alone!";
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

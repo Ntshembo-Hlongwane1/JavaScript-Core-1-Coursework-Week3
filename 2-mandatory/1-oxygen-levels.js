@@ -11,7 +11,25 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function safeLevels() {}
+Array.min = function (array) {
+  return Math.min.apply(Math, array);
+};
+
+function safeLevels(arr) {
+  //19.5% --> 23.5%
+
+  let withinBoundsPercentanges = [];
+
+  for (num of arr) {
+    if ("19.5" < num.replace("%", "") && "23.5" > num.replace("%", "")) {
+      withinBoundsPercentanges.push(num.replace("%", ""));
+    }
+  }
+
+  const result = Array.min(withinBoundsPercentanges);
+
+  return result + "%";
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

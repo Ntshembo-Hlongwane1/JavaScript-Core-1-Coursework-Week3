@@ -15,7 +15,18 @@
   
 */
 
-function colonisers() {}
+function colonisers(arr) {
+  const familyMembers = [];
+
+  for (member of arr) {
+    let memberArr = member.split(" ");
+    if (memberArr[1] === "family" && memberArr[0].startsWith("A")) {
+      familyMembers.push(member);
+    }
+  }
+
+  return familyMembers;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
